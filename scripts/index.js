@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             currentBalance -= amount;
             updateBalance();
-            messageElement.textContent = `Retirado: $${amount}`;
+            messageElement.textContent = `Retirado: ${amount}€`;
         }
     });
 
@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             currentBalance += amount;
             updateBalance();
-            messageElement.textContent = `Depositado: $${amount}`;
+            messageElement.textContent = `Depositado: ${amount}€`;
         }
     });
 
     function updateBalance() {
-        balanceElement.textContent = `Saldo: $${currentBalance}`;
+        balanceElement.textContent = `Saldo: ${currentBalance}€`;
     }
 });
