@@ -1,3 +1,9 @@
+
+/**
+ * Autor: Diego Alonso Molina (Full Stack Developer)
+ * GitHub: https://github.com/DiegusNueva/ejemplo-cajero.git
+ */
+
 document.addEventListener("DOMContentLoaded", () => {
     const saldoInicial = 1000;
     let saldoActual = saldoInicial;
