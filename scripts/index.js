@@ -1,36 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const balance = 1000
-    let currentBalance = balance
+    const saldoInicial = 1000;
+    let saldoActual = saldoInicial;
 
-    const messageElement = document.getElementById("mensaje")
-    const balanceElement = document.getElementById("saldo")
-    const amountElement = document.getElementById("importe")
-    const withdrawButton = document.getElementById("retirar")
-    const depositButton = document.getElementById("depositar")
+    const mensajeElemento = document.getElementById("mensaje");
+    const saldoElemento = document.getElementById("saldo");
+    const importeElemento = document.getElementById("importe");
+    const retirarBoton = document.getElementById("retirar");
+    const depositarBoton = document.getElementById("depositar");
 
-    withdrawButton.addEventListener("click", () => {
-        const amount = parseFloat(amountElement.value)
-        if (isNaN(amount) || amount <= 0 || amount > currentBalance) {
-            messageElement.textContent = "Monto no válido"
+    retirarBoton.addEventListener("click", () => {
+        const cantidad = parseFloat(importeElemento.value);
+        if (isNaN(cantidad) || cantidad <= 0 || cantidad > saldoActual) {
+            mensajeElemento.textContent = "Monto no válido";
         } else {
-            currentBalance -= amount
-            updateBalance()
-            messageElement.textContent = `Retirado: ${amount}€`
+            saldoActual -= cantidad;
+            actualizarSaldo();
+            mensajeElemento.textContent = `Retirado: ${cantidad}€`;
         }
-    })
+    });
 
-    depositButton.addEventListener("click", () => {
-        const amount = parseFloat(amountElement.value)
-        if (isNaN(amount) || amount <= 0) {
-            messageElement.textContent = "Monto no válido"
+    depositarBoton.addEventListener("click", () => {
+        const cantidad = parseFloat(importeElemento.value);
+        if (isNaN(cantidad) || cantidad <= 0) {
+            mensajeElemento.textContent = "Monto no válido";
         } else {
-            currentBalance += amount
-            updateBalance()
-            messageElement.textContent = `Depositado: ${amount}€`
+            saldoActual += cantidad;
+            actualizarSaldo();
+            mensajeElemento.textContent = `Depositado: ${cantidad}€`;
         }
-    })
+    });
 
-    const updateBalance = () => {
-        balanceElement.textContent = `Saldo: ${currentBalance}€`
-    }
-})
+    const actualizarSaldo = () => {
+        saldoElemento.textContent = `Saldo: ${saldoActual}€`;
+    };
+});
