@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     retirarBoton.addEventListener("click", () => {
         const cantidad = parseFloat(importeElemento.value);
         if (isNaN(cantidad) || cantidad <= 0 || cantidad > saldoActual) {
-            mensajeElemento.textContent = "Monto no válido";
+            mensajeElemento.textContent = "Importe no válido";
         } else {
             saldoActual -= cantidad;
             actualizarSaldo();
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     depositarBoton.addEventListener("click", () => {
         const cantidad = parseFloat(importeElemento.value);
         if (isNaN(cantidad) || cantidad <= 0) {
-            mensajeElemento.textContent = "Monto no válido";
+            mensajeElemento.textContent = "Importe no válido";
         } else {
             saldoActual += cantidad;
             actualizarSaldo();
