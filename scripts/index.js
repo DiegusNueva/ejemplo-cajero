@@ -5,15 +5,20 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    /*Declaramos dos variables: una con el saldo inicial y otra con el 
+    saldo en cada actual en cada momento*/
     const saldoInicial = 1000;
     let saldoActual = saldoInicial;
 
+    /*Enlazamos os elementos HTML al JS*/
     const mensajeElemento = document.getElementById("mensaje");
     const saldoElemento = document.getElementById("saldo");
     const importeElemento = document.getElementById("importe");
     const retirarBoton = document.getElementById("retirar");
     const depositarBoton = document.getElementById("depositar");
 
+    /*Botón retirar dinero: addEventListener correspondiente*/
     retirarBoton.addEventListener("click", () => {
         const cantidad = parseFloat(importeElemento.value);
         if (isNaN(cantidad) || cantidad <= 0 || cantidad > saldoActual) {
@@ -25,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    /*Botón depositar dinero: addEventListener correspondiente*/
     depositarBoton.addEventListener("click", () => {
         const cantidad = parseFloat(importeElemento.value);
         if (isNaN(cantidad) || cantidad <= 0) {
@@ -36,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    /*Método para actualizar el saldo*/
     const actualizarSaldo = () => {
         saldoElemento.textContent = `Saldo: ${saldoActual}€`;
     };
