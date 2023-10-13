@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const balance = 1000
     let currentBalance = balance
 
-    const messageElement = document.getElementById("message")
-    const balanceElement = document.getElementById("balance")
-    const amountElement = document.getElementById("amount")
-    const withdrawButton = document.getElementById("withdraw")
-    const depositButton = document.getElementById("deposit")
+    const messageElement = document.getElementById("mensaje")
+    const balanceElement = document.getElementById("saldo")
+    const amountElement = document.getElementById("importe")
+    const withdrawButton = document.getElementById("retirar")
+    const depositButton = document.getElementById("depositar")
 
     withdrawButton.addEventListener("click", () => {
         const amount = parseFloat(amountElement.value)
